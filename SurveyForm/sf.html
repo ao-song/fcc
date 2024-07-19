@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Form</title>
+    <link rel="stylesheet" href="sf.css">
 </head>
 <body>
     <h1 id="title">Survey Form</h1>
@@ -11,8 +12,37 @@
     <p id="description">This is the description of the survey.</p>
 
     <form id="survey-form">
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <fieldset>
+            <label for="name" id="name-label">Name: <input type="text" id="name" name="name" placeholder="Enter your name" required /></label>
+            <label for="email" id="email-label">Email: <input type="email" id="email" name="email" placeholder="Enter your email" required /></label>
+            <label for="number" id="number-label">Age: <input type="number" id="number" min="0" max="120" placeholder="Enter your age" required /></label>
+            <label for="dropdown" id="dropdown-label">Your current role?
+                <select id="dropdown" name="role">
+                    <option disabled selected value>Select an option</option>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="developer">Developer</option>
+                    <option value="other">Other</option>
+                </select>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Which option best describes your current role?</legend>
+            <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" value="personal" checked /> Personal</label>
+            <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" value="business" /> Business</label>
+        </fieldset>
+        <fieldset>
+            <legend>Favorite drinks:</legend>
+            <label for="coffee"><input type="checkbox" id="coffee" value="coffee" class="inline" /> Coffee</label>
+            <label for="juice"><input type="checkbox" id="juice" value="juice" class="inline" /> Juice</label>
+            <label for="wine"><input type="checkbox" id="wine" value="wine" class="inline" /> Wine</label>
+        </fieldset>
+        <fieldset>
+            <label for="bio">Provide a bio:
+                <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+            </label>
+        </fieldset>
+        <input id="submit" type="submit" value="Submit" />
     </form>
 
 </body>
